@@ -207,8 +207,8 @@ where User_Name = ? and Account_Number = ?
         bal_ben = cursor.fetchone()
         new_bal_ben = bal_ben[0]+money
         cursor.execute("select Balance from Bank_Database where Account_Number = ?",(acc,))
-        bal_ben = cursor.fetchone()
-        new_bal_sen = bal_ben[0]-money
+        bal_sen = cursor.fetchone()
+        new_bal_sen = bal_sen[0]-money
         if new_bal_sen < 0.00:
             print("Amount exceeded to transfer than the actual balance")
             time.sleep(3)
